@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import { fetchPost } from '../actions/index';
 
@@ -12,9 +13,9 @@ class PostsShow extends Component {
     if (!this.props.post) {
       return <div>Loading...</div>
     }
-    console.l
     return (
       <div>
+        <Link to="/">Back to Index</Link>
         <h3>{this.props.post.title}</h3>
         <h6>Categories: {this.props.post.categories}</h6>
         <p>{this.props.post.content}</p>
